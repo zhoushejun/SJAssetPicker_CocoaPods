@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--相簿-->
+        <scene sceneID="rYz-I1-U8a">
+            <objects>
+                <tableViewController storyboardIdentifier="SJAssetGroupsTableViewController" id="bKL-23-EZ6" customClass="SJAssetGroupsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="1d0-o1-rRq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SJAssetGroupsTableViewCellReuseIdentifier" id="Tg3-WQ-kuB">
+                                <rect key="frame" x="0.0" y="86" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tg3-WQ-kuB" id="NVV-md-RMb">
+                                    <frame key="frameInset" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bKL-23-EZ6" id="iat-Bh-WTr"/>
+                            <outlet property="delegate" destination="bKL-23-EZ6" id="TGK-hs-be1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="相簿" id="ibe-ck-BAe">
+                        <barButtonItem key="rightBarButtonItem" title="取消" id="HtR-0e-HTu">
+                            <connections>
+                                <action selector="tappedCancelItemAction:" destination="bKL-23-EZ6" id="dXp-bO-UMm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toSJAssetPickerViewController" id="htY-Yb-DmD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNj-uj-52l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="219"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SJAssetPickerViewController" id="BYZ-38-t0r" customClass="SJAssetPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4SF-3v-DiG">
+                                <frame key="frameInset" width="320" height="436"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="veT-ha-sUo">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellectionViewCellIdentifier" id="n6p-Ov-8fl">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bA1-n8-ynd"/>
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_img_check_sel" translatesAutoresizingMaskIntoConstraints="NO" id="IpQ-B7-U6N">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="FEF-rr-V99"/>
+                                                        <constraint firstAttribute="height" constant="30" id="s2o-v6-yre"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="bA1-n8-ynd" firstAttribute="leading" secondItem="n6p-Ov-8fl" secondAttribute="leading" id="E2s-cA-e5j"/>
+                                            <constraint firstItem="IpQ-B7-U6N" firstAttribute="top" secondItem="n6p-Ov-8fl" secondAttribute="top" id="Ll4-9e-YWH"/>
+                                            <constraint firstAttribute="trailing" secondItem="bA1-n8-ynd" secondAttribute="trailing" id="Uyz-6h-sSh"/>
+                                            <constraint firstAttribute="trailing" secondItem="IpQ-B7-U6N" secondAttribute="trailing" id="er3-Jx-KsK"/>
+                                            <constraint firstItem="bA1-n8-ynd" firstAttribute="top" secondItem="n6p-Ov-8fl" secondAttribute="top" id="gOf-hi-EBv"/>
+                                            <constraint firstAttribute="bottom" secondItem="bA1-n8-ynd" secondAttribute="bottom" id="vuZ-Xf-orc"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cuJ-gl-yzm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dYk-Ec-UKR"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak5-tM-fIW">
+                                <frame key="frameInset" minY="436" width="88" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3Fh-x2-5Zx"/>
+                                    <constraint firstAttribute="width" constant="88" id="q28-nJ-lS1"/>
+                                </constraints>
+                                <state key="normal" title="预览">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedPreviewButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBw-Vo-VfC"/>
+                                    <action selector="tappedPreviewItemAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1v-n8-EPT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIf-le-iiN">
+                                <frame key="frameInset" minX="198" minY="441" width="106" height="34"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.76470588240000004" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="3Fy-eO-6Oy"/>
+                                    <constraint firstAttribute="height" constant="34" id="PAL-wt-sLT"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="确定">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedOKButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoe-Xf-xhz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89009666442871094" green="0.89009666442871094" blue="0.89009666442871094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HIf-le-iiN" secondAttribute="trailing" constant="16" id="5iH-9w-Xjf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HIf-le-iiN" secondAttribute="bottom" constant="5" id="7mz-bm-LvP"/>
+                            <constraint firstItem="4SF-3v-DiG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="Ce0-cf-8Rh"/>
+                            <constraint firstItem="ak5-tM-fIW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qlx-zV-AmP"/>
+                            <constraint firstItem="4SF-3v-DiG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vpb-8O-JcS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ak5-tM-fIW" secondAttribute="bottom" id="mAG-Xv-7wa"/>
+                            <constraint firstItem="4SF-3v-DiG" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-44" id="q6p-H5-EqB"/>
+                            <constraint firstAttribute="trailing" secondItem="4SF-3v-DiG" secondAttribute="trailing" id="r4P-4N-cKm"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="6p9-DM-Nrp">
+                        <barButtonItem key="rightBarButtonItem" title="取消" id="JXZ-OG-7sy">
+                            <connections>
+                                <action selector="tappedCancelItemAction:" destination="BYZ-38-t0r" id="UXV-vl-h1u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="4SF-3v-DiG" id="6on-gg-Glo"/>
+                        <outlet property="okButton" destination="HIf-le-iiN" id="sfR-ar-6wr"/>
+                        <outlet property="previewItem" destination="ak5-tM-fIW" id="61E-xH-sKU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="226"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uIt-Qv-eSY">
+            <objects>
+                <navigationController storyboardIdentifier="SJAssetPickerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="CFZ-eA-OQl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K4b-Ih-igq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cgX-61-ORh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="bKL-23-EZ6" kind="relationship" relationship="rootViewController" id="RjA-0T-LV6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rq-7e-ROp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-779" y="212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_img_check_sel" width="30" height="30"/>
+    </resources>
+</document>
